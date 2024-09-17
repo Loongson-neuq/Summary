@@ -13,4 +13,4 @@ jobs:
 
       - name: Display passed parameters
         run: |
-          echo "Received payload: ${{ github.event.client_payload.submit_payload }}"
+          echo "Received payload: ${{ github.event.client_payload }}"
