@@ -1,0 +1,16 @@
+name: Target Workflow
+
+on:
+  repository_dispatch:
+    types: [trigger-event]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Display passed parameters
+        run: |
+          echo "Received payload: ${{ github.event.client_payload }}"
